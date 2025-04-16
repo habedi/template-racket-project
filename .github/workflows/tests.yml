@@ -14,6 +14,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Setup Racket
+        uses: Bogdanp/setup-racket@v1.12
+        with:
+          version: 'stable'
+
       - name: Install Dependencies
         run: |
           sudo apt-get update
@@ -27,3 +32,6 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/index.html
+          fail_ci_if_error: true
+          verbose: true
