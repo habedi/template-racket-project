@@ -6,6 +6,9 @@ on:
     tags:
       - 'v*'  # Trigger on version tags
 
+permissions:
+  contents: write # Needed for gh-pages action
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,16 +17,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Setup Racket
+        uses: Bogdanp/setup-racket@v1.12
+        with:
+          version: 'stable'
+
       - name: Install Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y make
           make install-deps
 
+      - name: Run Tests
+        run: make test
+
       - name: Run Tests and Generate Coverage Report
         run: make coverage
 
-      - name: Upload Coverage Reports to Codecov
-        uses: codecov/codecov-action@v5
+      - name: Deploy Coverage Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./coverage

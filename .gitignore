@@ -1,109 +1,34 @@
 ########################
-# Python Specific
-########################
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
-.env/
-.venv/
-env/
-venv/
-
-# Packaging
-.Python
-*.egg
-*.egg-info/
-dist/
-build/
-MANIFEST
-
-# Python Dependency tools
-develop-eggs/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-.installed.cfg
-
-# Python Test & Coverage
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-htmlcov/
-
-# Jupyter
-.ipynb_checkpoints
-
-########################
-# C / C++ Specific
+# Racket-specific
 ########################
 
-# Build artifacts
-*.o
-*.obj
-*.lo
-*.la
-*.a
-*.lib
-*.so
-*.so.*
-*.dll
-*.dylib
-*.exe
-*.out
-*.elf
+compiled/
+*.zo
+*.ssave
+*.dep
+*.plt
+*.rktd~
+*.rktl~
+*.scrbl~
 
-# CMake / Make / Autotools
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-makefile
-configure
-config.log
-config.status
-aclocal.m4
-autom4te.cache/
-compile
-install-sh
-ltmain.sh
-missing
+# Package metadata generated during development
+info.rkt~
+setup-plt/
+setup-info/
 
-# Debug & Profiling
-*.dSYM/
-*.stackdump
-*.core
-core
-*.gcno
-*.gcda
-*.gcov
-*.profraw
-*.profdata
-
-# Test & Coverage
-coverage/
-coverage.*
-test-results/
+# Generated documentation
+scribblings/
+doc/
+docs/html/
+docs/latex/
 
 ########################
-# IDE / Editor Junk
+# Editor / IDE Junk
 ########################
+
+.vscode/
 .idea/
 *.iml
-.vscode/
 *.swp
 *~
 *.bak
@@ -112,31 +37,34 @@ test-results/
 tags
 
 ########################
+# OS / Filesystem Junk
+########################
+
+.DS_Store
+Thumbs.db
+
+########################
 # Miscellaneous
 ########################
 
-# Distribution
-bin/
-obj/
+# Temporary and scratch directories
 tmp/
 temp/
-
-# System / misc
-.DS_Store
-*.patch
-*.orig
 *.dump
+*.orig
+*.patch
 
-# Local databases
+# Local databases or experiment artifacts
 *.db
 *.sqlite
 *.wal
 *.duckdb
 
-# Dependency lock files (optional)
-poetry.lock
+# Distribution or build outputs
+bin/
+obj/
+target/
 
-# Additional files and directories to ignore (put below)
-docs/html
-docs/latex
-target
+# Additional files and directory patterns to ignore (put below)
+coverage/
+*_output.txt
