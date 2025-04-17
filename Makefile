@@ -11,7 +11,7 @@ SRC_DIR      := template-lib
 TEST_DIR     := tests
 EXAMPLES_DIR := examples
 COVERAGE_DIR := coverage
-COLLECTION_NAME := $(notdir $(SRC_DIR))
+PACKAGE_NAME := $(notdir $(SRC_DIR))
 
 SHELL := /bin/bash
 .SHELLFLAGS := -e -o pipefail -c
@@ -29,7 +29,7 @@ help: ## Show help message for each target
 .PHONY: format
 format: ## Format the Racket code
 	$(ECHO) "Formatting Racket files..."
-	$(RACO) fmt --width 100 $(SRC_DIR)/*.rkt $(TEST_DIR)/*.rkt $(MAIN) $(EXAMPLES_DIR)/*.rkt
+	$(RACO) fmt $(SRC_DIR)/*.rkt $(TEST_DIR)/*.rkt $(MAIN) $(EXAMPLES_DIR)/*.rkt
 
 .PHONY: test
 test: ## Run the tests
@@ -40,6 +40,7 @@ test: ## Run the tests
 coverage: ## Run the tests with coverage
 	$(ECHO) "Running tests with coverage..."
 	$(RACO) cover -f html -d $(COVERAGE_DIR) -b $(TEST_DIR) $(SRC_DIR) *.rkt
+	$(RACO) cover-badge
 
 .PHONY: lint
 lint: ## Run the linter checks
@@ -62,7 +63,7 @@ install-deps: ## Install the development dependencies (for Debian-based systems)
 	sudo apt-get update
 	sudo apt-get install -y snapd
 	sudo snap install racket --classic
-	$(RACO) pkg install --auto --skip-installed fmt intellij cover review
+	$(RACO) pkg install --auto --skip-installed fmt intellij cover cover-badge review
 
 .PHONY: examples
 examples: ## Run the examples
@@ -83,9 +84,9 @@ run: build ## Run the application
 .PHONY: install
 install: ## Install the application or library package
 	$(ECHO) "Installing the package from current directory..."
-	$(RACO) pkg install --auto --link --name $(COLLECTION_NAME) $(shell pwd)
+	$(RACO) pkg install --auto --no-docs --name $(PACKAGE_NAME) $(shell pwd)
 
 .PHONY: uninstall
 uninstall: ## Uninstall the application or library package
-	$(ECHO) "Uninstalling the package $(COLLECTION_NAME)..."
-	$(RACO) pkg remove $(COLLECTION_NAME)
+	$(ECHO) "Uninstalling the package $(PACKAGE_NAME)..."
+	$(RACO) pkg remove $(PACKAGE_NAME)

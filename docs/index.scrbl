@@ -1,4 +1,5 @@
 #lang scribble/manual
+(require scribble/example)
 
 @title{Template Racket Project} ;; <-- User should change this title
 

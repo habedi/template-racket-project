@@ -6,6 +6,9 @@ on:
     tags:
       - 'v*'  # Trigger on version tags
 
+permissions:
+  contents: write # Needed for gh-pages action
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,13 +28,15 @@ jobs:
           sudo apt-get install -y make
           make install-deps
 
+      - name: Run Tests
+        run: make test
+
       - name: Run Tests and Generate Coverage Report
         run: make coverage
 
-      - name: Upload Coverage Reports to Codecov
-        uses: codecov/codecov-action@v5
+      - name: Deploy Coverage Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/index.html
-          fail_ci_if_error: true
-          verbose: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./coverage
