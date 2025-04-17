@@ -29,7 +29,7 @@ help: ## Show help message for each target
 .PHONY: format
 format: ## Format the Racket code
 	$(ECHO) "Formatting Racket files..."
-	$(RACO) fmt $(SRC_DIR)/*.rkt $(TEST_DIR)/*.rkt $(MAIN) $(EXAMPLES_DIR)/*.rkt
+	$(RACO) fmt --width 100 $(FMT_CONFIG) $(SRC_DIR)/*.rkt $(TEST_DIR)/*.rkt $(MAIN) $(EXAMPLES_DIR)/*.rkt
 
 .PHONY: test
 test: ## Run the tests
