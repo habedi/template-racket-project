@@ -7,31 +7,31 @@
 </div>
 <br>
 
-[![Tests](https://img.shields.io/github/actions/workflow/status/habedi/template-racket-project/tests.yml?label=tests&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-racket-project/actions/workflows/tests.yml)
-[![Code Coverage](https://img.shields.io/codecov/c/github/habedi/template-racket-project?label=coverage&style=flat&labelColor=282c34&logo=codecov)](https://codecov.io/gh/habedi/template-racket-project)
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-racket-project?label=code%20quality&style=flat&labelColor=282c34&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-racket-project)
-[![Docs](https://img.shields.io/badge/docs-latest-007ec6?label=docs&style=flat&labelColor=282c34&logo=readthedocs)](docs)
-[![License](https://img.shields.io/badge/license-MIT-007ec6?label=license&style=flat&labelColor=282c34&logo=open-source-initiative)](https://github.com/habedi/template-racket-project)
-[![Release](https://img.shields.io/github/release/habedi/template-racket-project.svg?label=release&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-racket-project/releases/latest)
+[![Tests](https://img.shields.io/github/actions/workflow/status/habedi/template-racket-project/tests.yml?label=tests&style=flat&logo=github)](https://github.com/habedi/template-racket-project/actions/workflows/tests.yml)
+[![Code Coverage](https://badgen.net/https/habedi.github.io/template-racket-project/badge.json)](https://habedi.github.io/template-racket-project)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-racket-project?label=code%20quality&style=flat&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-racket-project)
+[![Docs](https://img.shields.io/badge/docs-latest-007ec6?label=docs&style=flat&logo=readthedocs)](docs)
+[![License](https://img.shields.io/badge/license-MIT-007ec6?label=license&style=flat&logo=open-source-initiative)](https://github.com/habedi/template-racket-project)
+[![Release](https://img.shields.io/github/release/habedi/template-racket-project.svg?label=release&style=flat&logo=github)](https://github.com/habedi/template-racket-project/releases/latest)
 
-This is a project template for Racket projects.
-It provides a minimalistic project structure with pre-configured GitHub Actions, Makefile,
-and configuration files for development tools.
-It is intended as a starting point for Racket projects, making it easier to start development of new Racket libraries
-and applications quickly.
-I share it here in case it might be useful to others.
+This is a template for Racket projects.  
+It provides a minimalistic project structure with pre-configured GitHub Actions, a Makefile,  
+and configuration files for development tools.  
+The template is intended as a starting point to make it easier to begin development of new Racket libraries  
+and applications.  
+I’m sharing it here in case it’s useful to others.
 
 ### Features
 
 - Minimalistic project structure
-- Pre-configured GitHub Actions for running tests and code coverage
-- Makefile for managing the development workflow and tasks like code formatting, testing, linting, etc.
+- Pre-configured GitHub Actions for running tests and tracking code coverage
+- Makefile for managing the development workflow and tasks like code formatting, testing, generating documentation, etc.
 - GitHub badges for tests, code quality and coverage, documentation, etc.
 - [Code of Conduct](CODE_OF_CONDUCT.md) and [Contributing Guidelines](CONTRIBUTING.md)
 
 ### Getting Started
 
-Check out the [Makefile](Makefile) for available commands to manage the development workflow of the project.
+Check out the [Makefile](Makefile) for available commands to manage the development workflow.
 
 ```shell
 # Install system and development dependencies (for Debian-based systems)
@@ -46,8 +46,8 @@ make help
 
 ### Platform Compatibility
 
-This template is primarily to be used on Debian-based GNU/Linux systems. However, with some modifications,
-it should be usable on other platforms as well.
+This template is primarily intended for Debian-based GNU/Linux systems. However, with some adjustments,  
+it should work on other platforms too.
 
 ### Contributing
 

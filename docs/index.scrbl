@@ -1,10 +1,11 @@
 #lang scribble/manual
+@(require scribble/example)
 
-@title{Template Racket Project} ;; <-- User should change this title
+@title{Template Racket Project}
 
-@defmodule[template-lib/main] ;; <-- User MUST change 'template-lib' to their collection name
+@defmodule[template-lib/main]
 
-This library provides basic arithmetic functions. It is an example how the documentation should be structured.
+This library provides basic arithmetic functions. It is an example of how the documentation should be structured.
 
 @defproc[(add [a number?] [b number?]) number?]{
   Returns the sum of @racket[a] and @racket[b].
@@ -21,9 +22,4 @@ This library provides basic arithmetic functions. It is an example how the docum
 @defproc[(divide [a number?] [b number?]) number?]{
   Returns the quotient of @racket[a] divided by @racket[b].
   Raises an @racket[exn:fail:contract:divide-by-zero] exception if @racket[b] is zero.
-
-  @examples[
-    (divide 10 2)
-    (divide 5 0) #:eval (eval:error exn:fail:contract:divide-by-zero?)
-  ]
 }

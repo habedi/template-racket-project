@@ -67,3 +67,4 @@ target/
 
 # Additional files and directory patterns to ignore (put below)
 coverage/
+*_output.txt
