@@ -14,11 +14,11 @@
 [![License](https://img.shields.io/badge/license-MIT-007ec6?label=license&style=flat&logo=open-source-initiative)](https://github.com/habedi/template-racket-project)
 [![Release](https://img.shields.io/github/release/habedi/template-racket-project.svg?label=release&style=flat&logo=github)](https://github.com/habedi/template-racket-project/releases/latest)
 
-This is a template for Racket projects.  
-It provides a minimalistic project structure with pre-configured GitHub Actions, a Makefile,  
-and configuration files for development tools.  
-The template is intended as a starting point to make it easier to begin development of new Racket libraries  
-and applications.  
+This is a template for Racket projects.
+It provides a minimalistic project structure with pre-configured GitHub Actions, a Makefile,
+and configuration files for development tools.
+The template is intended as a starting point to make it easier to begin development of new Racket libraries
+and applications.
 I’m sharing it here in case it’s useful to others.
 
 ### Features
@@ -46,7 +46,7 @@ make help
 
 ### Platform Compatibility
 
-This template is primarily intended for Debian-based GNU/Linux systems. However, with some adjustments,  
+This template is primarily intended for Debian-based GNU/Linux systems. However, with some adjustments,
 it should work on other platforms too.
 
 ### Contributing
